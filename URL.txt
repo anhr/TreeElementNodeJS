@@ -1,0 +1,8 @@
+Building TreeElement
+
+Открыть "Node.js command prompt"
+
+d:
+cd "D:\WebFeatures\GoogleSite\nodejs\TreeElement"
+npm install
+npm run build

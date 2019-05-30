@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Tree Element</title>
+    <meta name="author" content="Andrej Hristoliubov https://anhr.github.io/AboutMe/">
+<!--
+    <link rel="stylesheet" href="myTreeView.css" type="text/css">
+    <script type="text/javascript" src="myTreeView.js"></script>
+    <script type="text/javascript" src="https://anhr.github.io/JS/Common.js"></script>
+    <script type="text/javascript" src="https://anhr.github.io/myRequest/myRequest.js"></script>
+-->
+    <script src="build/treeElement.js"></script>
+</head>
+<body>
+    <p><a href='../index.html'>Home</a> | <a href='https://github.com/anhr/TreeElementNodeJS' target="_blank">GitHub</a></p>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Рекламный блок -->
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:728px;height:90px"
+         data-ad-client="ca-pub-2575715742658777"
+         data-ad-slot="8810450588"></ins>
+    <script>
+        ( adsbygoogle = window.adsbygoogle || [] ).push( {} );
+        function consoleError( e ) {
+
+            console.error( e );
+
+        }
+    </script>
+
+    <h1>node.js version of the TreeElement.</h1>
+
+    <!--Simple Tree-->
+    <h2 >Simple Tree</h2>
+    <div id="SimpleTree"></div>
+    <script type="text/javascript">
+        try{
+            document.getElementById("SimpleTree").appendChild(myTreeView.createBranch({
+                name: "Simple Tree",
+                params:
+                {
+                    createBranch: function () {
+                        var el = document.createElement("div");
+                        el.innerText = "Branch";
+                        return el;
+                    }
+                }
+            }));
+        } catch (e) { consoleError(e.message); }
+    </script>
+
+    <!--Open branch and close branch events-->
+    <h2>Open branch and close branch events</h2>
+    <div id="SimpleTree2"></div>
+    <script type="text/javascript">
+        try {
+            document.getElementById("SimpleTree2").appendChild(myTreeView.createBranch({
+                name: "Open Branch",
+                params:
+                {
+                    noBranchLeft: true,
+                    createBranch: function () {
+                        var el = document.createElement("div");
+                        el.innerText = "Branch";
+                        return el;
+                    },
+                    onOpenBranch: function (a) { a.querySelector(".name").innerText = "Close Branch"; },
+                    onCloseBranch: function (a) { a.querySelector(".name").innerText = "Open Branch"; }
+                }
+            }));
+        } catch (e) { consoleError(e.message); }
+    </script>
+
+    <!--Remember opened branch.-->
+    <h2>Remember opened branch.</h2>
+    <p>To test please open this branch and update the web page.</p>
+    <div id="Remember"></div>
+    <script type="text/javascript">
+        document.getElementById("Remember").appendChild(myTreeView.createBranch({
+            name: "Remember Branch",
+            params:
+            {
+                createBranch: function () {
+                    var el = document.createElement("div");
+                    el.innerText = "Branch";
+                    return el;
+                },
+                remember: "rememberBranch"
+            }
+        }));
+    </script>
+
+    <!--Simple Tree 3-->
+    <h2>Simple Tree 3</h2>
+    <div id="SimpleTree3"></div>
+    <div id="SimpleBranch3" style="display:none">Simple Branch 3</div>
+    <script type="text/javascript">
+        myTreeView.createTree(
+            "SimpleTree3", [{
+                name: 'Simple Tree 3',
+                branch: document.getElementById('SimpleBranch3'),
+                animate: true
+            }]);
+    </script>
+
+    <!--Complex Tree-->
+    <h2>Complex Tree</h2>
+    <div id="ComplexTree"></div>
+    <script type="text/javascript">
+        try {
+            myTreeView.createTree(
+                document.getElementById("ComplexTree"),
+                [
+                    {
+                        name: "Animate Branch",
+                        branch: "branch 1",
+                        animate: true,
+                        tree: [
+                            {
+                                name: "tree 2.1",
+                                animate: true,
+                                tree: [
+                                    {
+                                        name: "tree 2.2",
+                                        branch: "branch 2.2",
+                                        animate: true
+                                    }
+                                ]
+                            },
+                            {
+                                file: "branch1.html",
+                                callback: function (el) {
+                                    el.querySelector("div").innerHTML = "Branch from file";
+                                }
+                            },
+                            { el: "<div>Branch from string</div>" },
+                        ]
+                    },
+                    {
+                        name: "Complex Tree 2",
+                        branch: function () {
+                            var el = document.createElement("div");
+                            el.className = "branchLeft";
+                            el.appendChild(document.createElement("input"));
+                            var elClose = document.createElement("input");
+                            elClose.type = "button";
+                            elClose.onclick = myTreeView.onclickCloseBranch;
+                            elClose.value = "Close Branch";
+                            el.appendChild(elClose);
+                            return el;
+                        },
+                        title: "inline-element",
+                        tagName: "span"
+                    },
+                    {
+                        name: "Complex Tree 3",
+                        branch: "branch 3",
+                        title: "inline-element",
+                        tagName: "span"
+                    },
+                ]
+            );
+        } catch (e) {
+            consoleError(e.message);
+        }
+    </script>
+
+    <!--Add new branch into existing tree-->
+    <h2>Add new branch into existing tree</h2>
+    <div id="AddNewBranch"></div>
+    <input type="button" onclick="javascript: onclickAddNewBranch()" value="Add New Branch" />
+    <input type="button" onclick="javascript: onclickRemoveAllNewBranches()" value="Remove All New Branches" />
+    <input type="button" onclick="javascript: onclickRemoveFirstBranch()" value="Remove First Branch" />
+    <input type="button" onclick="javascript: onclickRemoveAllBranches()" value="Remove All Branches" />
+    <script type="text/javascript">
+        document.getElementById("AddNewBranch").appendChild(myTreeView.createBranch({
+            name: "Tree", params: { tree: [{ name: "First Branch", branchId: "First Branch Id" }]}
+        }));
+        function onclickAddNewBranch() {
+
+            //Add simply branch
+            myTreeView.AddNewBranch("AddNewBranch", { name: "New Branch", branchId: "Added Branch" });
+            
+            //add complex branch
+            myTreeView.AddNewBranch("AddNewBranch", {
+                branch: function () {
+                    /*
+                    var el = document.createElement("div");
+                    el.innerHTML = "New Branch";
+                    el.branchId = this.branchId;
+                    return el;
+                    */
+                    return myTreeView.createBranch({
+                        name: "New Tree", params: {
+                            tree: [{ name: "New Branch" }],
+                            branchId: this.branchId
+                        }
+                    });
+                },
+                branchId: "Added Branch"
+            });
+        }
+        function onclickRemoveAllNewBranches() {
+            if (!myTreeView.removeBranch("Added Branch", document.getElementById('AddNewBranch')))
+                alert('Branch is not detected and not removed');
+        }
+        function onclickRemoveFirstBranch() {
+            if (!myTreeView.removeBranch("First Branch Id", 'AddNewBranch'))
+                alert('Branch is not detected and not removed');
+        }
+        function onclickRemoveAllBranches() {
+            if (!myTreeView.removeAllBranches('AddNewBranch'))
+                alert('Branches is not detected and not removed');
+        }
+    </script>
+
+    <!--Branch anywhere-->
+    <h2>Branch anywhere</h2>
+    <div id="BranchAnywhere"></div>
+    <p>Some element inside the tree, but not a tree branch</p>
+    <div id="Branch"></div>
+    <script type="text/javascript">
+        myTreeView.createTree(
+            "BranchAnywhere", [ {
+                    name: "Branch Anywhere Tree",
+                    branch: "Branch Anywhere",
+                    parentElement: "Branch"
+                }]);
+    </script>
+    <div id="BranchAnywhere2"></div>
+    <p>Some element inside the tree, but not a tree branch</p>
+    <div id="Branch2"></div>
+    <script type="text/javascript">
+        var elBranchAnywhere2 = document.getElementById("BranchAnywhere2");
+        elBranchAnywhere2.appendChild(myTreeView.createBranch({
+            name: "Branch Anywhere Tree 2",
+            params: {
+                parentElement: "Branch2",
+                createBranch: function (elTreeView) {
+                    var el = document.createElement("div");
+                    el.innerHTML = 'Branch Anywhere 2 <input type="button" onclick="javascript: myTreeView.onCloseBranchAnywhere(event)" value="Close Branch" />';
+                    el.elTreeView = elTreeView;//for myTreeView.onCloseBranchAnywhere(event)
+                    return el;
+                }
+            }}));
+    </script>
+</body>
+</html>
