@@ -6,11 +6,12 @@ node.js version of the TreeElement
 The easiest way to use TreeElement in your code is by using the built source at `build/treeElement.js`. These built JavaScript files bundle all the necessary dependencies to run TreeElement.
 
 In your `head` tag, include the following code:
-```html
+```
+<link rel="stylesheet" href="https://anhr.github.io/TreeElement/myTreeView.css" type="text/css">
 <script src="https://raw.githack.com/anhr/treeElementNodeJS/master/build/treeElement.js"></script>
 ```
 
-Now you can use myTreeView for append of a Tree element into your web page.
+Now you can use window.myTreeView for append of a Tree element into your web page.
 
 ## Append simple tree 
 
