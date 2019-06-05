@@ -1,5 +1,6 @@
 /**
  * node.js version of the TreeElement
+ * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
  *
  * Copyright 2011 Data Arts Team, Google Creative Lab
  *

@@ -25,7 +25,7 @@ Now you can use window.myTreeView for append of a Tree element into your web pag
 └── build - Compiled source code.
 ```
 
-## Building your own customController
+## Building your own TreeElement
 
 In the terminal, enter the following:
 
