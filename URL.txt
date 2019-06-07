@@ -1,8 +1,14 @@
+test page
+https://raw.githack.com/anhr/TreeElementNodeJS/master/index.html
+-------------------------------------------
+JSDoc 3 is an API documentation generator for JavaScript
+https://jsdoc.app/
+-------------------------------------------
 Building TreeElement
 
-Открыть "Node.js command prompt"
+Open "Node.js command prompt"
 
 d:
-cd "D:\WebFeatures\GoogleSite\nodejs\TreeElement"
+cd "D:\WebFeatures\GoogleSite\nodejs\TreeElementNodeJS"
 npm install
 npm run build

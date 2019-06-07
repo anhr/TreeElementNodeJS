@@ -29,7 +29,8 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="index.html">
+    <Content Include="Examples\branch1.html" />
+    <Content Include="Examples\index.html">
       <SubType>Code</SubType>
     </Content>
     <Content Include="index.js" />
@@ -39,6 +40,9 @@
     <Content Include="rollup.config.js" />
     <Content Include="rollup.config.min.js" />
     <Content Include="URL.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Examples\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
