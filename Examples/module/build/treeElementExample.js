@@ -1,5 +1,6 @@
 /**
- * node.js version of the TreeElement
+ * example of use of TreeElement module
+ *
  * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -538,16 +539,25 @@ function consoleError$1(e) {
 	console.error(e);
 }
 
-exports.createBranch = createBranch;
-exports.createTree = createTree;
-exports.onclickBranch = onclickBranch;
-exports.onclickCloseBranch = onclickCloseBranch;
-exports.onCloseBranchAnywhere = onCloseBranchAnywhere;
-exports.AddNewBranch = AddNewBranch;
-exports.removeBranch = removeBranch;
-exports.removeAllBranches = removeAllBranches;
+var myTreeView$1 = myTreeView = {
+  createBranch: createBranch,
+  createTree: createTree,
+  onclickBranch: onclickBranch,
+  onclickCloseBranch: onclickCloseBranch,
+  onCloseBranchAnywhere: onCloseBranchAnywhere,
+  AddNewBranch: AddNewBranch,
+  removeBranch: removeBranch,
+  removeAllBranches: removeAllBranches
+};
+
+function consoleError$2(e) {
+  console.error(e);
+}
+
+exports.myTreeView = myTreeView$1;
+exports.consoleError = consoleError$2;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
-//# sourceMappingURL=treeElement.js.map
+//# sourceMappingURL=treeElementExample.js.map

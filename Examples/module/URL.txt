@@ -1,6 +1,6 @@
 test page
-https://raw.githack.com/anhr/TreeElementNodeJS/master/Examples/html/
-http://localhost/nodejs/TreeElementNodeJS/Examples/html/
+https://raw.githack.com/anhr/TreeElementNodeJS/master/Examples/module/
+http://localhost/nodejs/TreeElementNodeJS/Examples/module/
 -------------------------------------------
 JSDoc 3 is an API documentation generator for JavaScript
 https://jsdoc.app/
@@ -10,6 +10,6 @@ Building TreeElement
 Open "Node.js command prompt"
 
 d:
-cd "D:\WebFeatures\GoogleSite\nodejs\TreeElementNodeJS"
+cd "D:\WebFeatures\GoogleSite\nodejs\TreeElementNodeJS\Examples\module"
 npm install
 npm run build

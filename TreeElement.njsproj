@@ -29,12 +29,25 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Examples\branch1.html" />
-    <Content Include="Examples\index.html">
+    <Content Include="Examples\html\branch1.html" />
+    <Content Include="Examples\module\branch1.html" />
+    <Content Include="Examples\module\index.html">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="Examples\html\index.html">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Examples\module\index.js" />
+    <Content Include="Examples\module\licenseBanner.txt" />
+    <Content Include="Examples\module\package.json" />
+    <Content Include="Examples\module\README.md" />
+    <Content Include="Examples\module\rollup.config.js" />
+    <Content Include="Examples\module\URL.txt" />
     <Content Include="index.js" />
     <Content Include="licenseBanner.txt" />
+    <Content Include="myTreeView.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="rollup.config.js" />
@@ -43,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Examples\" />
+    <Folder Include="Examples\html\" />
+    <Folder Include="Examples\module\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

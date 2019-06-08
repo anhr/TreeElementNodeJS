@@ -1,5 +1,6 @@
 /**
- * node.js version of the TreeElement
+ * example of use of TreeElement module
+ * 
  * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
  *
  * Copyright 2011 Data Arts Team, Google Creative Lab
@@ -13,26 +14,37 @@
 
 import fs from 'fs';
 import path from 'path';
-import defaultConfig from './rollup.config';
-import uglify from 'rollup-plugin-uglify';
+import resolve from 'rollup-plugin-node-resolve';
+import cleanup from 'rollup-plugin-cleanup';
+import babel from 'rollup-plugin-babel';
 
 const banner = fs.readFileSync(path.join(__dirname, 'licenseBanner.txt'));
 
-export default Object.assign({}, defaultConfig, {
-  output: {
+export default {
+  input: 'index.js',
+  output: [{
     // TODO: Remove default exports, and this line, in v0.8.0.
     exports: 'named',
-	file: './build/treeElement.min.js',
+	file: './build/treeElementExample.js',
     format: 'umd',
 	name: 'myTreeView',
+    sourcemap: true,
     banner: banner
+  }, {
+	file: './build/treeElementExample.module.js',
+    format: 'es',
+    sourcemap: true,
+    banner: banner
+  }],
+  watch: {
+    include: 'src/**'
   },
-  plugins: [...defaultConfig.plugins, uglify({
-    output: {
-      // Preserve license commenting in minified build.
-      comments: function(node, comment) {
-        return comment.type === 'comment2';
-      }
-    }
-  })]
-});
+  plugins: [
+	  resolve(),
+    babel({
+      plugins: ['external-helpers'],
+      exclude: 'node_modules/**'
+    }),
+    cleanup()
+  ]
+};

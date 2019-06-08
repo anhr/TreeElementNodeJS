@@ -1,10 +1,10 @@
 {
-  "name": "tree-element",
+  "name": "tree-element-example",
   "version": "0.1.0",
-  "description": "node.js version of the TreeElement",
-  "main": "build/treeElement.js",
+  "description": "example of use of TreeElement module",
+  "main": "build/treeElementExample.js",
   "scripts": {
-    "build": "rollup -c && rollup -c rollup.config.min.js"
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
