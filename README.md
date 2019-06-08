@@ -8,7 +8,14 @@ The easiest way to use TreeElement in your code is by using the built source at 
 In your `head` tag, include the following code:
 ```
 <link rel="stylesheet" href="https://anhr.github.io/TreeElement/myTreeView.css" type="text/css">
-<script src="https://raw.githack.com/anhr/treeElementNodeJS/master/build/treeElement.js"></script>
+```
+then
+```
+<script src="https://raw.githack.com/anhr/TreeElementNodeJS/master/build/treeElement.js"></script>
+```
+or
+```
+<script src="https://raw.githack.com/anhr/TreeElementNodeJS/master/build/treeElement.min.js"></script>
 ```
 
 Now you can use window.myTreeView for append of a Tree element into your web page.
