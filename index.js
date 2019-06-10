@@ -31,7 +31,7 @@ import { loadFile } from '../loadFileNodeJS/loadFile.js';
  * @param {string} [options.name] name of the branch. Optional. Default is empty name
  * @param {string} [options.title] title of the tag of the TreeElement. Optional. Default is empty title
  * @param {string} [options.tagName] name of the branch tag. Optional. Default is div
- * @param {string} [options.className] className of tag of the branchremember className
+ * @param {string} [options.className] className of branch tag. Optional.
  * @param {string} [options.id] id of tag of the branch. Optional. Default is empty id
  * @param {string} [options.treeViewTagName] name of tag of the TreeElement. Optional. Default is span
  * 
