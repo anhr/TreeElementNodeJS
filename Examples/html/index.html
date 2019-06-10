@@ -6,7 +6,7 @@
 	<title>Tree Element</title>
 	<meta name="author" content="Andrej Hristoliubov https://anhr.github.io/AboutMe/">
 
-	<!--<link rel="stylesheet" href="myTreeView.css" type="text/css">-->
+	<!--<link rel="stylesheet" href="../../../../TreeElement/myTreeView.css" type="text/css">-->
 	<link rel="stylesheet" href="https://anhr.github.io/TreeElement/myTreeView.css" type="text/css">
 
 	<!--<script src="../../build/treeElement.js"></script>-->
@@ -131,11 +131,10 @@
 							},
 							{
 								file: "branch1.html",
-								callback: function ( el ) {
-									el.querySelector( "div" ).innerHTML = "Branch from file";
-								}
 							},
-							{ el: "<div>Branch from string</div>" },
+							{
+								el: "<div>Branch from string</div>"
+							},
 						]
 					},
 					{
