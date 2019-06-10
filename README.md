@@ -1,5 +1,6 @@
 ﻿# TreeElement
-node.js version of the TreeElement
+node.js version of the TreeElement. 
+Adds a hierarchy of HTML elements as a tree to your webpage. [Example.](https://raw.githack.com/anhr/TreeElementNodeJS/master/Examples/html/)
 
 
 ## Packaged Builds
@@ -17,7 +18,7 @@ or
 ```
 <script src="https://raw.githack.com/anhr/TreeElementNodeJS/master/build/treeElement.min.js"></script>
 ```
-or you can import tree from file in your JavaScript module. [Code example](https://github.com/anhr/TreeElementNodeJS/tree/master/Examples/module)
+or you can import myTreeView from myTreeView.js file in your JavaScript module. [Code example.](https://github.com/anhr/TreeElementNodeJS/tree/master/Examples/module)
 ```
 import myTreeView from 'myTreeView.js';
 ```
