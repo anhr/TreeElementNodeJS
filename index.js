@@ -336,11 +336,13 @@ function onclickBranch( a ) {
 
 }
 
+/**
+ * User has closed a branch event
+ * @param {Event} event
+ */
 function onclickCloseBranch( event ) {
 
-	if ( ! event ) event = window.event;
-	var el = event.target || event.srcElement;
-	var elParent = el.parentElement.parentElement;
+	var elParent = getElementFromEvent( event ).parentElement.parentElement;
 	var elTreeView = getElTreeView( elParent );
 	if ( elTreeView.parentElement != elParent )
 		consoleError( 'incorrect treeView' );
@@ -348,14 +350,25 @@ function onclickCloseBranch( event ) {
 
 }
 
+/**
+ * User has closed a branch event
+ * @param {Event} event
+ */
 function onCloseBranchAnywhere( event ) {
 
-	if ( ! event ) event = window.event;
-	var el = event.target || event.srcElement;
-	el.parentElement.elTreeView.onclick();
+	getElementFromEvent( event ).parentElement.elTreeView.onclick();
 
 }
 
+/**
+ * Adds a new branch to the tree
+ * @param {String|HTMLElement} elTree id of the tree element or tree element to which the new branch will be added
+ * @param {Object} branch new branch options
+ * @param {string} [branch.name] name of the branch.
+ * Optional. You can use a branch function instead branch name.
+ * @param {Function} [branch.branch] function () returns an element of the new branch
+ * @param {string} [branch.branchId] identifier of the new branch. Uses for find and remove branch.
+ */
 function AddNewBranch( elTree, branch ) {
 
 	if ( typeof elTree == "string" )
@@ -461,6 +474,11 @@ function findBranch( elTree, branchId ) {
 
 }
 
+/**
+ * Removes a branch from a tree
+ * @param {String} branchId identifier of the branch for removing. See AddNewBranch function for details
+ * @param {HTMLElement} elTree The tree element from which the branch will be removed
+ */
 function removeBranch( branchId, elTree ) {
 
 	var array = findBranch( elTree, branchId );
@@ -476,6 +494,10 @@ function removeBranch( branchId, elTree ) {
 
 }
 
+/**
+ * Removes all branch from a tree
+ * @param {HTMLElement} elTree The tree element from which all branches will be removed
+ */
 function removeAllBranches( elTree ) {
 
 	if ( typeof elTree == "string" )
@@ -638,6 +660,10 @@ function consoleError( e ) {
 
 	console.error( e );
 
+}
+function getElementFromEvent( event ) {
+	if ( !event ) event = window.event;//for IE6
+	return event.target || event.srcElement;
 }
 
 export { createBranch, createTree, onclickBranch, onclickCloseBranch, onCloseBranchAnywhere, AddNewBranch, removeBranch, removeAllBranches };

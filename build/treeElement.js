@@ -343,17 +343,13 @@ function onclickBranch(a) {
 	return isOpened;
 }
 function onclickCloseBranch(event) {
-	if (!event) event = window.event;
-	var el = event.target || event.srcElement;
-	var elParent = el.parentElement.parentElement;
+	var elParent = getElementFromEvent(event).parentElement.parentElement;
 	var elTreeView = getElTreeView(elParent);
 	if (elTreeView.parentElement != elParent) consoleError$1('incorrect treeView');
 	onclickBranch(elTreeView);
 }
 function onCloseBranchAnywhere(event) {
-	if (!event) event = window.event;
-	var el = event.target || event.srcElement;
-	el.parentElement.elTreeView.onclick();
+	getElementFromEvent(event).parentElement.elTreeView.onclick();
 }
 function AddNewBranch(elTree, branch) {
 	if (typeof elTree == "string") elTree = document.getElementById(elTree);
@@ -536,6 +532,10 @@ var expanded = 'expanded';
 var btoggle = 'b-toggle';
 function consoleError$1(e) {
 	console.error(e);
+}
+function getElementFromEvent(event) {
+	if (!event) event = window.event;
+	return event.target || event.srcElement;
 }
 
 exports.createBranch = createBranch;

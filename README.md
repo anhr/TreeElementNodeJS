@@ -17,6 +17,10 @@ or
 ```
 <script src="https://raw.githack.com/anhr/TreeElementNodeJS/master/build/treeElement.min.js"></script>
 ```
+or you can import tree from file in your JavaScript module. [Code example](https://github.com/anhr/TreeElementNodeJS/tree/master/Examples/module)
+```
+import myTreeView from 'myTreeView.js';
+```
 
 Now you can use window.myTreeView for append of a Tree element into your web page.
 
