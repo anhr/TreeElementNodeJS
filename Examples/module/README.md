@@ -13,12 +13,6 @@ In your `head` tag, include the following code:
 
 Now you can use window.myTreeView for append of a Tree element into your web page.
 
-## Append simple tree 
-
-```
-	element
-```
-
 ## Directory Contents
 
 ```
