@@ -29,6 +29,11 @@ Now you can use window.myTreeView for append of a Tree element into your web pag
 * [myTreeView.createBranch( options )](#mytreeviewcreatebranch-options-)
 * [myTreeView.createTree( elTree, tree )](#mytreeviewcreatetree-eltree-tree-)
 * [myTreeView.onclickBranch( a )](#mytreeviewonclickbranch-a-)
+* [myTreeView.onclickCloseBranch( event )](#mytreeviewonclickclosebranch-event-)
+* [myTreeView.onCloseBranchAnywhere( event )](#mytreeviewonclosebranchanywhere-event-)
+* [myTreeView.AddNewBranch( elTree, branch )](#mytreeviewaddnewbranch-eltree-branch-)
+* [myTreeView.removeBranch( branchId, elTree )](#mytreeviewremovebranch-branchid-eltree-)
+* [myTreeView.removeAllBranches( elTree )](#mytreeviewremoveallbranches-eltree-)
 
 ### myTreeView.createBranch( options )
 
