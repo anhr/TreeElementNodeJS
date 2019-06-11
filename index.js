@@ -476,7 +476,7 @@ function findBranch( elTree, branchId ) {
 }
 
 /**
- * Removes a branch from a tree
+ * Removes a branch from the tree
  * @param {String} branchId identifier of the branch for removing. See AddNewBranch function for details
  * @param {HTMLElement} elTree The tree element from which the branch will be removed
  */
@@ -496,7 +496,7 @@ function removeBranch( branchId, elTree ) {
 }
 
 /**
- * Removes all branch from a tree
+ * Removes all branch from the tree
  * @param {HTMLElement} elTree The tree element from which all branches will be removed
  */
 function removeAllBranches( elTree ) {

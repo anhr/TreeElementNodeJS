@@ -181,6 +181,52 @@ User has clicked a branch event.
 | --- | --- | --- | --- |
 | a | <code>HTMLElement</code> |  | The branch the user clicked on. |
 
+### myTreeView.onclickCloseBranch( event )
+
+User has closed a branch event.
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| event | <code>event</code> |  | event. |
+
+### myTreeView.onCloseBranchAnywhere( event )
+
+User has closed a branch event.
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| event | <code>event</code> |  | event. |
+
+### myTreeView.AddNewBranch( elTree, branch )
+
+Adds a new branch to the tree.
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| elTree | <code>string or HTMLElement</code> |  | id of the tree element or tree element to which the new branch will be added. |
+| branch | <code>Object</code> |  | New branch options. |
+| [branch.name] | <code>string</code> |  | The name of the branch. You can use a branch function instead branch name. |
+| [branch.branch] | <code>Function</code> |  | function () returns an element of the new branch. |
+| [branch.branchId] | <code>string</code> |  | Identifier of the new branch. Uses for find and remove branch. |
+
+### myTreeView.removeBranch( branchId, elTree )
+
+Removes a branch from the tree
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| branchId | <code>string</code> |  | identifier of the branch for removing. See AddNewBranch function for details. |
+| elTree | <code>HTMLElement</code> |  | The tree element from which the branch will be removed. |
+
+### myTreeView.removeAllBranches( elTree )
+
+Removes all branch from the tree
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| branchId | <code>string</code> |  | identifier of the branch for removing. See AddNewBranch function for details. |
+| elTree | <code>HTMLElement</code> |  | The tree element from which all branches will be removed. |
+
 ## Directory Contents
 
 ```
