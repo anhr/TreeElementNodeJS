@@ -40,15 +40,16 @@ import { loadFile } from '../loadFileNodeJS/loadFile.js';
  * @param {string} [options.params.remember] the name of the branch that was opened before closing the web page.
  * This branch will be opened immediately after opening the web page.
  * Optional. Default is empty - not remember
- * @param {boolean} [options.params.noBranchLeft] true - do not shift the tree branch to left to the 10 pixels in your web page.
+ * @param {boolean} [options.params.noBranchLeft] true - margin-left of the branch is 0 and not 10 pixels.
  * Optional. Default - shift the tree branch to left to the 10 pixels
- * @param {onBranchEvent} [options.params.onOpenBranch] function ( a ). event is user has opened a branch. Optional.
+ * @param {onBranchEvent} [options.params.onOpenBranch] function ( a ). event is user has opened a branch.
+ * element is class="treeView". * Optional.
  * @param {onBranchEvent} [options.params.onCloseBranch] function ( a ). event is user has closed a branch. Optional.
  * @param {boolean} [options.params.animate] true - animate of open/closing of the branch. Optional. Default is undefined
  * @param {string} [options.params.branchId] identifier of the branch. Optional.
  * @param {string|Function} [options.params.branch] name of the branch or function () - creates and returns the branch element. Optional.
  * @param {branchOptions[]} [options.params.tree] array of branches. Each item of the tree array is options of the branch. Optional.
- * @param {boolean} [options.params.scrollIntoView] true - Scroll the opened branch into the visible area of the browser window.
+ * @param {boolean} [options.params.scrollIntoView] true - scroll the opened branch into the visible area of the browser window.
  * Optional. Default is not scrolling
  *
  * @returns tree branch element
@@ -117,7 +118,7 @@ function createBranch( options ) {
  * @param {string} [tree[].parentElement] id of the parentElement of the branch tag.
  * A new branch can be not a child of the tree. Use the parentElement option if you want to create a branch anywhere on the web page.
  * Optional. Default is undefined
- * @param {string} [tree[].file] name of the HTML file with code of the branch element. Optional.
+ * @param {string} [tree[].file] the path to HTML file with code of the branch element. Optional.
  * @param {string} [tree[].el] code of the branch element. Optional.
  *
  * @example

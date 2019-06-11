@@ -99,28 +99,19 @@ Create tree.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| options | <code>Object</code> |  | Followed options is available: |
-| [options.name] | <code>String</code> | "" | The name of the branch. |
-| [options.title] | <code>String</code> |  | The title of the tag of the TreeElement. |
-| [options.tagName] | <code>String</code> |  | The name of the branch tag. |
-| [options.className] | <code>String</code> |  | The className of branch tag. |
-| [options.id] | <code>String</code> |  | The id of branch tag. |
-| [options.treeViewTagName] | <code>String</code> | "span" | The name of tag of the TreeElement. |
-|  |  |  |  |
-| options.params | <code>Object</code> |  | Followed params is available: |
-| options.params.createBranch | <code>Function</code> |  | function (). creates and returns the branch element. |
-| [options.params.remember] | <code>String</code> |  | The name of the branch that was opened before closing the web page. This branch will be opened immediately after opening the web page. |
-| [options.params.noBranchLeft] | <code>boolean</code> |  | true - margin-left of the branch is 0 and not 10 pixels. |
-| [options.params.onOpenBranch] | <code>event</code> |  | function ( element ). event is user has opened a branch. element is the "treeView" class. |
-| [options.params.onCloseBranch] | <code>event</code> |  | function ( element ). event is user has closed a branch. element is the "treeView" class. |
-| [options.params.animate] | <code>boolean</code> |  | true - animate of open/closing of the branch. |
-| [options.params.branchId] | <code>String</code> |  | Identifier of the branch. |
-| [options.params.branch] | <code>String or Function</code> |  | The name of the branch or function () - creates and returns the branch element. |
-| [options.params.tree] | <code>Object[]</code> |  | Array of branches. Each item of the tree array is options of the branch. |
-| [options.params.scrollIntoView] | <code>boolean</code> |  | true - scroll the opened branch into the visible area of the browser window. |
+| elTree | <code>HTMLElement or string</code> |  | Parent element of the tree or class name of the new parent element. |
+| tree | <code>Object[]</code> |  | Array of branches. Each item of the tree array is options of the branch. |
+| [tree[].name] | <code>String</code> | "" | The name of the branch. |
+| [tree[].branch] | <code>String or HTMLElement or Function</code> |  | The name of the branch or branch element or function () - creates and returns the branch element. |
+| [tree[].animate] | <code>boolean</code> |  | true - animate of open/closing of the branch. |
+| [tree[].title] | <code>String</code> |  | The title of the tag of the branch. |
+| [tree[].tagName] | <code>String</code> | "div" | The name of the branch tag. |
+| [tree[].tree] | <code>Object[]</code> |  | Array of child branches. Each item of the tree array is options of the branch. |
+| [tree[].parentElement] | <code>String</code> |  | Id of the parentElement of the branch tag. A new branch can be not a child of the tree. Use the parentElement option if you want to create a branch anywhere on the web page. |
+| [tree[].file] | <code>String</code> |  | The path to HTML file with code of the branch element. |
+| [tree[].el] | <code>String</code> |  | The code of the branch element. |
 
-
-**Example. Complex tree.**  
+**Example. Create tree.**  
 ```
 <div id="ComplexTree"></div>
 <script type="text/javascript">
