@@ -26,8 +26,8 @@ import myTreeView from 'myTreeView.js';
 
 Now you can use window.myTreeView for append of a Tree element into your web page.
 
-* myTreeView.createBranch( options )
-* myTreeView.createTree( elTree, tree )
+* [myTreeView.createBranch( options )](#mytreeviewcreatebranch-options-)
+* [myTreeView.createTree( elTree, tree )](#mytreeviewcreatetree-eltree-tree-)
 * [myTreeView.onclickBranch( a )](#mytreeviewonclickbranch-a-)
 
 ### myTreeView.createBranch( options )
