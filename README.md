@@ -220,7 +220,7 @@ Removes a branch from the tree
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| branchId | <code>string</code> |  | identifier of the branch for removing. See AddNewBranch function for details. |
+| branchId | <code>string</code> |  | identifier of the branch for removing. See [myTreeView.AddNewBranch( elTree, branch )](#mytreeviewaddnewbranch-eltree-branch-) function for details. |
 | elTree | <code>HTMLElement</code> |  | The tree element from which the branch will be removed. |
 
 ### myTreeView.removeAllBranches( elTree )
