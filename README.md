@@ -19,7 +19,7 @@ or
 ```
 <script src="https://raw.githack.com/anhr/TreeElementNodeJS/master/build/treeElement.min.js"></script>
 ```
-or you can import myTreeView from myTreeView.js file in your JavaScript module. [Code example.](https://github.com/anhr/TreeElementNodeJS/tree/master/Examples/module)
+or you can import myTreeView from myTreeView.js file in your JavaScript module. [Example](https://raw.githack.com/anhr/TreeElementNodeJS/master/Examples/module/) [Code of example.](https://github.com/anhr/TreeElementNodeJS/tree/master/Examples/module)
 ```
 import myTreeView from 'myTreeView.js';
 ```
