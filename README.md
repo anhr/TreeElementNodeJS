@@ -26,14 +26,14 @@ import myTreeView from 'myTreeView.js';
 
 Now you can use window.myTreeView for append of a Tree element into your web page.
 
-* [myTreeView.createBranch( options )](#mytreeviewcreatebranch-options-)
-* [myTreeView.createTree( elTree, tree )](#mytreeviewcreatetree-eltree-tree-)
-* [myTreeView.onclickBranch( a )](#mytreeviewonclickbranch-a-)
-* [myTreeView.onclickCloseBranch( event )](#mytreeviewonclickclosebranch-event-)
-* [myTreeView.onCloseBranchAnywhere( event )](#mytreeviewonclosebranchanywhere-event-)
-* [myTreeView.AddNewBranch( elTree, branch )](#mytreeviewaddnewbranch-eltree-branch-)
-* [myTreeView.removeBranch( branchId, elTree )](#mytreeviewremovebranch-branchid-eltree-)
-* [myTreeView.removeAllBranches( elTree )](#mytreeviewremoveallbranches-eltree-)
+* [myTreeView.createBranch( options )](#mytreeviewcreatebranch-options-) Create tree branch.
+* [myTreeView.createTree( elTree, tree )](#mytreeviewcreatetree-eltree-tree-) Create tree.
+* [myTreeView.onclickBranch( a )](#mytreeviewonclickbranch-a-) User has clicked a branch event.
+* [myTreeView.onclickCloseBranch( event )](#mytreeviewonclickclosebranch-event-) User has closed a branch event.
+* [myTreeView.onCloseBranchAnywhere( event )](#mytreeviewonclosebranchanywhere-event-) User has closed a branch event.
+* [myTreeView.AddNewBranch( elTree, branch )](#mytreeviewaddnewbranch-eltree-branch-) Adds a new branch to the tree.
+* [myTreeView.removeBranch( branchId, elTree )](#mytreeviewremovebranch-branchid-eltree-) Removes a branch from the tree.
+* [myTreeView.removeAllBranches( elTree )](#mytreeviewremoveallbranches-eltree-) Removes all branch from the tree.
 
 ### myTreeView.createBranch( options )
 
@@ -216,7 +216,7 @@ Adds a new branch to the tree.
 
 ### myTreeView.removeBranch( branchId, elTree )
 
-Removes a branch from the tree
+Removes a branch from the tree.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -225,7 +225,7 @@ Removes a branch from the tree
 
 ### myTreeView.removeAllBranches( elTree )
 
-Removes all branch from the tree
+Removes all branch from the tree.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
