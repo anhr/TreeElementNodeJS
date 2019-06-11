@@ -229,7 +229,6 @@ Removes all branch from the tree
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| branchId | <code>string</code> |  | identifier of the branch for removing. See AddNewBranch function for details. |
 | elTree | <code>HTMLElement</code> |  | The tree element from which all branches will be removed. |
 
 ## Directory Contents
