@@ -667,4 +667,10 @@ function getElementFromEvent( event ) {
 	return event.target || event.srcElement;
 }
 
+export function getWaitIconBase( papams ) {
+	if ( typeof papams == 'undefined' )
+		papams = '';
+	return '<img src="img/Wait.gif" style="width: 20px; height:20px"' + papams + '>';
+}
+
 export { createBranch, createTree, onclickBranch, onclickCloseBranch, onCloseBranchAnywhere, AddNewBranch, removeBranch, removeAllBranches };
