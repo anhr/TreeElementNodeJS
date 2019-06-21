@@ -538,8 +538,8 @@ function getElementFromEvent(event) {
 	return event.target || event.srcElement;
 }
 function getWaitIconBase(papams) {
-	if (typeof papams == 'undefined') papams = '';
-	return '<img src="img/Wait.gif" style="width: 20px; height:20px"' + papams + '>';
+	if (typeof papams == 'undefined') papams = 'style="width: 20px; height:20px"';
+	return '<img src="https://raw.githubusercontent.com/anhr/TreeElementNodeJS/master/img/wait.gif" ' + papams + '>';
 }
 
 exports.getWaitIconBase = getWaitIconBase;
