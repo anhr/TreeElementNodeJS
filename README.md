@@ -285,7 +285,7 @@ LG Smart tv
 
 
 ## Thanks
-The following libraries / open-source projects were used in the development of customController:
+The following libraries / open-source projects were used in the development of TreeElement:
  * [Rollup](https://rollupjs.org)
  * [Node.js](http://nodejs.org/)
 
