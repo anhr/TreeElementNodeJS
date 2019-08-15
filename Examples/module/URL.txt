@@ -5,11 +5,12 @@ http://localhost/nodejs/TreeElementNodeJS/Examples/module/
 JSDoc 3 is an API documentation generator for JavaScript
 https://jsdoc.app/
 -------------------------------------------
-Building TreeElement
-
 Open "Node.js command prompt"
 
 d:
+Building TreeElement module example
 cd "D:\WebFeatures\GoogleSite\nodejs\TreeElementNodeJS\Examples\module"
+Building TreeElement
+cd "D:\WebFeatures\GoogleSite\nodejs\TreeElementNodeJS\"
 npm install
 npm run build

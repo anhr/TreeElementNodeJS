@@ -15,7 +15,8 @@
 import { cookie } from '../cookieNodeJS/cookie.js';
 
 //Please download https://github.com/anhr/loadFileNodeJS into ../loadFileNodeJS folder
-import { loadFile } from '../loadFileNodeJS/loadFile.js';
+//import { loadFile } from 'http://localhost/nodejs/loadFileNodeJS/loadFile.js';
+import loadFile from '../loadFileNodeJS/loadFile.js';
 /**
  * @callback onBranchEvent
  * @param {HTMLElement} a element of the "treeView" class
