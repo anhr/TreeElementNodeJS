@@ -9,12 +9,6 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.myTreeView = {})));
-}(this, (function (exports) { 'use strict';
-
 function isEnabled() {
 	return navigator.cookieEnabled;
 }
@@ -542,17 +536,5 @@ function getWaitIconBase(papams) {
 	return '<img src="https://raw.githubusercontent.com/anhr/TreeElementNodeJS/master/img/wait.gif" ' + papams + '>';
 }
 
-exports.getWaitIconBase = getWaitIconBase;
-exports.createBranch = createBranch;
-exports.createTree = createTree;
-exports.onclickBranch = onclickBranch;
-exports.onclickCloseBranch = onclickCloseBranch;
-exports.onCloseBranchAnywhere = onCloseBranchAnywhere;
-exports.AddNewBranch = AddNewBranch;
-exports.removeBranch = removeBranch;
-exports.removeAllBranches = removeAllBranches;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=treeElement.js.map
+export { getWaitIconBase, createBranch, createTree, onclickBranch, onclickCloseBranch, onCloseBranchAnywhere, AddNewBranch, removeBranch, removeAllBranches };
+//# sourceMappingURL=treeElement.module.js.map

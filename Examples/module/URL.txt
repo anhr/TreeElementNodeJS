@@ -1,6 +1,6 @@
 test page
 https://raw.githack.com/anhr/TreeElementNodeJS/master/Examples/module/
-http://localhost/nodejs/TreeElementNodeJS/Examples/module/
+http://localhost/anhr/TreeElementNodeJS/master/Examples/module/
 -------------------------------------------
 JSDoc 3 is an API documentation generator for JavaScript
 https://jsdoc.app/

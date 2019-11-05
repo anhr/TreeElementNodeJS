@@ -1,5 +1,6 @@
 /**
- * node.js version of the TreeElement
+ * example of use of TreeElement module
+ *
  * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -8,12 +9,6 @@
  *
  * http://www.apache.org/licenses/LICENSE-2.0
  */
-
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
-	typeof define === 'function' && define.amd ? define(['exports'], factory) :
-	(factory((global.myTreeView = {})));
-}(this, (function (exports) { 'use strict';
 
 function isEnabled() {
 	return navigator.cookieEnabled;
@@ -216,7 +211,7 @@ function sync(url, options) {
 		request.ProcessReqChange(function (myRequest) {
 			if (myRequest.processStatus200Error()) return;
 			response = myRequest.req.responseText;
-			options.onload(response, url);
+			options.onload(response);
 			return;
 		});
 	}, false
@@ -537,22 +532,21 @@ function getElementFromEvent(event) {
 	if (!event) event = window.event;
 	return event.target || event.srcElement;
 }
-function getWaitIconBase(papams) {
-	if (typeof papams == 'undefined') papams = 'style="width: 20px; height:20px"';
-	return '<img src="https://raw.githubusercontent.com/anhr/TreeElementNodeJS/master/img/wait.gif" ' + papams + '>';
+
+var myTreeView$1 = myTreeView = {
+  createBranch: createBranch,
+  createTree: createTree,
+  onclickBranch: onclickBranch,
+  onclickCloseBranch: onclickCloseBranch,
+  onCloseBranchAnywhere: onCloseBranchAnywhere,
+  AddNewBranch: AddNewBranch,
+  removeBranch: removeBranch,
+  removeAllBranches: removeAllBranches
+};
+
+function consoleError$2(e) {
+  console.error(e);
 }
 
-exports.getWaitIconBase = getWaitIconBase;
-exports.createBranch = createBranch;
-exports.createTree = createTree;
-exports.onclickBranch = onclickBranch;
-exports.onclickCloseBranch = onclickCloseBranch;
-exports.onCloseBranchAnywhere = onCloseBranchAnywhere;
-exports.AddNewBranch = AddNewBranch;
-exports.removeBranch = removeBranch;
-exports.removeAllBranches = removeAllBranches;
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-})));
-//# sourceMappingURL=treeElement.js.map
+export { myTreeView$1 as myTreeView, consoleError$2 as consoleError };
+//# sourceMappingURL=treeElementExample.module.js.map
