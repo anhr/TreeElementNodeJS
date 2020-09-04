@@ -9,6 +9,22 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
+/**
+ * @module cookie
+ * @description node.js version of the cookie.
+ * Cookies let you store user information in web pages.
+ * @see {@link https://www.w3schools.com/js/js_cookies.asp}
+ *
+ * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
+ *
+ * @copyright 2011 Data Arts Team, Google Creative Lab
+ *
+ * @license under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
 function isEnabled() {
 	return navigator.cookieEnabled;
 }
@@ -25,6 +41,9 @@ function set(name, value, cookie_date) {
 	document.cookie = name + "=" + value + (typeof settings == 'undefined' ? '' : settings) + "; expires=" + cookie_date.toGMTString();
 	if (document.cookie === '') console.error('document.cookie is empty');
 }
+function setObject(name, object) {
+	set(name, JSON.stringify(object));
+}
 function get(name, defaultValue) {
 	if (!isEnabled()) {
 		consoleCookieEnabled();
@@ -35,15 +54,70 @@ function get(name, defaultValue) {
 	if (typeof defaultValue == 'undefined') return '';
 	return defaultValue;
 }
+function getObject(name, options, optionsDefault) {
+	new defaultCookie().getObject(name, options, copyObject(name, optionsDefault));
+}
+function copyObject(name, objectDefault) {
+	return JSON.parse(get(name, JSON.stringify(objectDefault)));
+}
 function consoleCookieEnabled() {
 	console.error('navigator.cookieEnabled = ' + navigator.cookieEnabled);
 }
+function defaultCookie(name) {
+	this.get = function (defaultValue) {
+		return defaultValue;
+	};
+	this.set = function () {};
+	this.getObject = function (name, options, optionsDefault) {
+		if (!optionsDefault) return;
+		Object.keys(optionsDefault).forEach(function (key) {
+			var option = optionsDefault[key];
+			if (option !== undefined) options[key] = JSON.parse(JSON.stringify(option));
+		});
+	};
+	this.copyObject = function (name, objectDefault) {
+		return JSON.parse(JSON.stringify(objectDefault));
+	};
+	this.setObject = function () {};
+	this.isTrue = function (defaultValue) {
+		return defaultValue;
+	};
+}
 
+/**
+* node.js version of the cookie.
+*
+* @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
+*
+* @copyright 2011 Data Arts Team, Google Creative Lab
+*
+* @license under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+* http://www.apache.org/licenses/LICENSE-2.0
+*/
 var cookie = {
   set: set,
-  get: get
+  setObject: setObject,
+  get: get,
+  getObject: getObject,
+  copyObject: copyObject,
+  defaultCookie: defaultCookie
 };
 
+/**
+ * node.js version of the synchronous download of the file.
+ * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
+ *
+ * @copyright 2011 Data Arts Team, Google Creative Lab
+ *
+ * @license under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
 function myRequest(options) {
 	this.loadXMLDoc = function () {
 		var req;
@@ -218,10 +292,34 @@ function sync(url, options) {
 	return response;
 }
 
+/**
+ * node.js version of the synchronous download of the file.
+ * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
+ *
+ * @copyright 2011 Data Arts Team, Google Creative Lab
+ *
+ * @license under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
 var loadFile = {
   sync: sync
 };
 
+/**
+ * node.js version of the TreeElement
+ * @author Andrej Hristoliubov https://anhr.github.io/AboutMe/
+ *
+ * @copyright 2011 Data Arts Team, Google Creative Lab
+ *
+ * @license under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
 function createBranch(options) {
 	var el = document.createElement(options.tagName == undefined ? "div" : options.tagName);
 	if (options.className != undefined) el.className = options.className;

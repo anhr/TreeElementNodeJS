@@ -11,12 +11,14 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
-//Please download https://github.com/anhr/cookieNodeJS into ../cookieNodeJS folder
-import { cookie } from '../cookieNodeJS/cookie.js';
+//Please download https://github.com/anhr/cookieNodeJS into ../../cookieNodeJS/master folder
+import cookie from '../../cookieNodeJS/master/cookie.js';
+//import cookie from 'https://raw.githack.com/anhr/cookieNodeJS/master/cookie.js';
 
-//Please download https://github.com/anhr/loadFileNodeJS into ../loadFileNodeJS folder
-//import { loadFile } from 'http://localhost/nodejs/loadFileNodeJS/loadFile.js';
-import loadFile from '../loadFileNodeJS/loadFile.js';
+//import { loadFile } from 'http://localhost/anhr/loadFileNodeJS/master/loadFile.js';
+//import { loadFile } from 'https://raw.githack.com/anhr/loadFileNodeJS/master/loadFile.js';
+//Please download https://github.com/anhr/loadFileNodeJS into ../../loadFileNodeJS/master folder
+import loadFile from '../../loadFileNodeJS/master/loadFile.js';
 /**
  * @callback onBranchEvent
  * @param {HTMLElement} a element of the "treeView" class
