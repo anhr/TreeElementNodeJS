@@ -12,8 +12,9 @@
  */
 
 //Please download https://github.com/anhr/cookieNodeJS into ../../cookieNodeJS/master folder
-import cookie from '../../cookieNodeJS/master/cookie.js';
+import cookie from '../../commonNodeJS/master/cookieNodeJS/cookie.js';
 //import cookie from 'https://raw.githack.com/anhr/cookieNodeJS/master/cookie.js';
+//import cookie from 'https://raw.githack.com/anhr/commonNodeJS/master/cookieNodeJS/cookie.js';
 
 //import { loadFile } from 'http://localhost/anhr/loadFileNodeJS/master/loadFile.js';
 //import { loadFile } from 'https://raw.githack.com/anhr/loadFileNodeJS/master/loadFile.js';
