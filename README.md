@@ -43,7 +43,7 @@ Create tree branch.
 
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
-| options | <code>Object</code> |  | Followed options is available: |
+| options | <code>Object</code> |  | The following options are available: |
 | [options.name] | <code>String</code> | "" | The name of the branch. |
 | [options.title] | <code>String</code> |  | The title of the tag of the TreeElement. |
 | [options.tagName] | <code>String</code> |  | The name of the branch tag. |

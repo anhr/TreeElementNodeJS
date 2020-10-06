@@ -11,8 +11,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  */
 
-//Please download https://github.com/anhr/cookieNodeJS into ../../cookieNodeJS/master folder
-import cookie from '../../commonNodeJS/master/cookieNodeJS/cookie.js';
+import cookie from '../../commonNodeJS/master/cookieNodeJS/cookie.js';//https://github.com/anhr/commonNodeJS/tree/master/cookieNodeJS
 //import cookie from 'https://raw.githack.com/anhr/cookieNodeJS/master/cookie.js';
 //import cookie from 'https://raw.githack.com/anhr/commonNodeJS/master/cookieNodeJS/cookie.js';
 
@@ -31,7 +30,7 @@ import loadFile from '../../loadFileNodeJS/master/loadFile.js';
 
 /**
  * Create tree branch
- * @param {Object} options followed options is available
+ * @param {Object} options the following options are available
  * @param {string} [options.name] name of the branch. Optional. Default is empty name
  * @param {string} [options.title] title of the tag of the TreeElement. Optional. Default is empty title
  * @param {string} [options.tagName] name of the branch tag. Optional. Default is div
